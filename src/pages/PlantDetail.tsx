@@ -8,6 +8,7 @@ import { getNextWateringDate, getDaysUntil, getNextFertilizingDate } from '@/hoo
 import { PlantImage } from '@/components/PlantImage';
 import { CareLogModal } from '@/components/CareLogModal';
 import { AddPlantModal } from '@/components/AddPlantModal';
+import { PhotoUpload } from '@/components/PhotoUpload';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Calendar } from '@/components/ui/calendar';
@@ -240,7 +241,7 @@ export const PlantDetail = ({ plants, updatePlant, addCareLog, deleteCareLog, ar
           <div className="absolute inset-0 bg-foreground/20 backdrop-blur-sm" onClick={() => setShowPhotoModal(false)} />
           <div className="relative bg-card border border-border rounded-2xl shadow-2xl w-full max-w-sm mx-4 p-6 space-y-3">
             <h3 className="font-serif font-bold">Add Growth Photo</h3>
-            <Input placeholder="Photo URL" value={photoUrl} onChange={e => setPhotoUrl(e.target.value)} />
+            <PhotoUpload value={photoUrl} onChange={setPhotoUrl} label="Growth Photo" />
             <Input placeholder="Caption" value={photoCaption} onChange={e => setPhotoCaption(e.target.value)} />
             <Button className="w-full" onClick={() => {
               if (photoUrl) {

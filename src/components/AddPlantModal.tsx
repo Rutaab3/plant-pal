@@ -11,7 +11,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { PlantImage } from '@/components/PlantImage';
+import { PhotoUpload } from '@/components/PhotoUpload';
 import { cn } from '@/lib/utils';
 
 const schema = z.object({
@@ -117,15 +117,11 @@ export const AddPlantModal = ({ open, onClose, onSave, initial }: Props) => {
             <Input {...register('species')} placeholder="e.g. Monstera deliciosa" />
           </div>
 
-          <div>
-            <label className="text-sm font-medium mb-1 block">Photo URL</label>
-            <Input {...register('photoUrl')} placeholder="https://..." />
-            {photoUrl && (
-              <div className="mt-2 w-20 h-20 rounded-xl overflow-hidden">
-                <PlantImage src={photoUrl} name={watch('name') || 'P'} className="w-full h-full" />
-              </div>
-            )}
-          </div>
+          <PhotoUpload
+            value={photoUrl || ''}
+            onChange={(dataUrl) => setValue('photoUrl', dataUrl)}
+            label="Plant Photo"
+          />
 
           <div className="grid grid-cols-2 gap-3">
             <div>
