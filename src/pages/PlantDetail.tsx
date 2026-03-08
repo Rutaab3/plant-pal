@@ -8,6 +8,7 @@ import { getNextWateringDate, getDaysUntil, getNextFertilizingDate } from '@/hoo
 import { PlantImage } from '@/components/PlantImage';
 import { CareLogModal } from '@/components/CareLogModal';
 import { AddPlantModal } from '@/components/AddPlantModal';
+import { PhotoUpload } from '@/components/PhotoUpload';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Calendar } from '@/components/ui/calendar';
