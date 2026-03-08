@@ -82,10 +82,6 @@ export const AddPlantModal = ({ open, onClose, onSave, initial }: Props) => {
       lastFertilized: initial?.lastFertilized || null,
       lastRepotted: initial?.lastRepotted || null,
     });
-      lastWatered: initial?.lastWatered || null,
-      lastFertilized: initial?.lastFertilized || null,
-      lastRepotted: initial?.lastRepotted || null,
-    });
     reset();
     onClose();
   };
