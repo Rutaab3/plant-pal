@@ -68,11 +68,20 @@ export const AddPlantModal = ({ open, onClose, onSave, initial }: Props) => {
 
   const onSubmit = (data: FormData) => {
     onSave({
-      ...data,
+      name: data.name,
       species: data.species || '',
       photoUrl: data.photoUrl || '',
       notes: data.notes || '',
+      location: data.location || 'Living Room',
+      soilType: data.soilType || 'Well-draining',
       purchaseDate: data.purchaseDate || new Date().toISOString(),
+      wateringFrequencyDays: data.wateringFrequencyDays,
+      fertilizingFrequencyDays: data.fertilizingFrequencyDays,
+      healthStatus: data.healthStatus,
+      lastWatered: initial?.lastWatered || null,
+      lastFertilized: initial?.lastFertilized || null,
+      lastRepotted: initial?.lastRepotted || null,
+    });
       lastWatered: initial?.lastWatered || null,
       lastFertilized: initial?.lastFertilized || null,
       lastRepotted: initial?.lastRepotted || null,
