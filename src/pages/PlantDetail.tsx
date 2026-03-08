@@ -241,7 +241,7 @@ export const PlantDetail = ({ plants, updatePlant, addCareLog, deleteCareLog, ar
           <div className="absolute inset-0 bg-foreground/20 backdrop-blur-sm" onClick={() => setShowPhotoModal(false)} />
           <div className="relative bg-card border border-border rounded-2xl shadow-2xl w-full max-w-sm mx-4 p-6 space-y-3">
             <h3 className="font-serif font-bold">Add Growth Photo</h3>
-            <Input placeholder="Photo URL" value={photoUrl} onChange={e => setPhotoUrl(e.target.value)} />
+            <PhotoUpload value={photoUrl} onChange={setPhotoUrl} label="Growth Photo" />
             <Input placeholder="Caption" value={photoCaption} onChange={e => setPhotoCaption(e.target.value)} />
             <Button className="w-full" onClick={() => {
               if (photoUrl) {
