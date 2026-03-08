@@ -11,7 +11,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { PlantImage } from '@/components/PlantImage';
+import { PhotoUpload } from '@/components/PhotoUpload';
 import { cn } from '@/lib/utils';
 
 const schema = z.object({
